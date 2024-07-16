@@ -1,19 +1,19 @@
 {
-  "name": "bmp-ts",
-  "version": "1.0.9",
+  "name": "bmp-ts-for-printer",
+  "version": "1.1.0",
   "description": "A pure typescript BMP encoder and decoder",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hipstersmoothie/bmp-ts"
+    "url": "https://github.com/tyrad/bmp-ts-for-printer"
   },
   "files": [
     "dist",
     "types"
   ],
   "author": {
-    "name": "Andrew lisowski",
-    "email": "lisowski54@gmail.com"
+    "name": "mistj",
+    "email": "tyradccc@gmail.com"
   },
   "scripts": {
     "build": "tshy",

@@ -159,8 +159,8 @@ export default class BmpEncoder implements BmpImage {
     if (this.palette.length && this.colors === 2) {
       this.initColors(1);
     } else {
-      this.writeUInt32LE(0x00ffffff); // Black
       this.writeUInt32LE(0x00000000); // White
+      this.writeUInt32LE(0x00ffffff); // Black
     }
 
     this.pos += 1; // ?
@@ -177,7 +177,7 @@ export default class BmpEncoder implements BmpImage {
 
       const brightness = r * 0.2126 + g * 0.7152 + b * 0.0722;
 
-      lineArr.push(brightness > 127 ? 0 : 1);
+      lineArr.push(brightness > 127 ? 1 : 0);
 
       if ((x + 1) % 8 === 0) {
         this.data[p - 1] = createInteger(lineArr);
