@@ -1,7 +1,7 @@
 <div align="center">
   <img width="200" height="200"
     src="./logo.png">
-  <h1>bmp-ts</h1>
+  <h1>bmp-ts-for-printer</h1>
   <p>A pure typescript <code>bmp</code> encoder and decoder.</p>
 </div>
 
@@ -10,7 +10,7 @@
 
 Supports decoding and encoding in all bit depths (1, 4, 8, 16, 24, 32).
 
-> 本仓库fork自[bmp-ts](https://github.com/jimp-dev/bmp-ts), 兼容了某些打印机打印深度为1的bmp格式的图片时，打印效果为反色的问题
+> 本仓库fork自[bmp-ts](https://github.com/jimp-dev/bmp-ts), 兼容了某些打印机打印深度为1的bmp格式的图片时，打印效果为反色的问题  
 > This repository is forked from [bmp-ts](https://github.com/jimp-dev/bmp-ts), and it addresses the issue where some printers print 1-bit BMP images in inverted colors.
 
 ## Install
@@ -28,11 +28,14 @@ const bmp = require('bmp-ts-for-printer');
 const Jimp = require('jimp');
 const fs = require('fs');
 
-const image = await Jimp.read(inputImagePath);
+const image = await Jimp.read("./a.bmp");
+
 const buffer = await image
     .getBufferAsync(Jimp.MIME_BMP);
 const bitmap = bmp.decode(buffer);
 bitmap.bitPP = 1;
+
 const { data } = bmp.encode(bitmap);
-fs.writeFileSync('./image.bmp', data); 
+
+fs.writeFileSync('./output.bmp', data); 
 ```
