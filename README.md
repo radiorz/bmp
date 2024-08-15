@@ -1,4 +1,4 @@
-# bmp tools
+# bmp encoder decoder
 
 用于一位 bmp 图的转换等。
 
