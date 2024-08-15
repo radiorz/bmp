@@ -1,73 +1,41 @@
 {
-  "name": "bmp-ts-for-printer",
-  "version": "1.1.0",
-  "description": "A pure typescript BMP encoder and decoder",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tyrad/bmp-ts-for-printer"
-  },
-  "files": [
-    "dist",
-    "types"
-  ],
-  "author": {
-    "name": "mistj",
-    "email": "tyradccc@gmail.com"
-  },
-  "scripts": {
-    "build": "tshy",
-    "test": "vitest",
-    "release": "auto shipit"
-  },
-  "devDependencies": {
-    "@types/node": "^10.11.7",
-    "auto": "^11.1.2",
-    "prettier": "^3.2.5",
-    "tshy": "^1.12.0",
-    "typescript": "^5.4.3",
-    "vitest": "^1.4.0"
-  },
-  "prettier": {
-    "singleQuote": true
-  },
-  "keywords": [
-    "bmp",
-    "1bit",
-    "4bit",
-    "8bit",
-    "16bit",
-    "24bit",
-    "32bit",
-    "encoder",
-    "decoder",
-    "image",
-    "javascript",
-    "js"
-  ],
-  "tshy": {
-    "exclude": [
-      "**/__test__/**"
-    ],
-    "exports": {
-      "./package.json": "./package.json",
-      ".": "./src/index.ts"
-    }
-  },
+  "name": "png-to-bmp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "exports": {
-    "./package.json": "./package.json",
     ".": {
       "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./dist/commonjs/index.d.ts",
-        "default": "./dist/commonjs/index.js"
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
       }
     }
   },
-  "main": "./dist/commonjs/index.js",
-  "types": "./dist/commonjs/index.d.ts",
-  "type": "module"
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "ts-node ./src/index.ts",
+    "test": "vitest"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "ts-node": "^10.9.1",
+    "tsup": "^8.0.2",
+    "vitest": "^1.3.1"
+  }
 }
