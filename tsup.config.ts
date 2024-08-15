@@ -11,7 +11,7 @@ export default defineConfig((options) => ({
   dts: true,
   // 拆分
   splitting: false,
-  // sourcemap: true,
+  sourcemap: true,
   clean: true,
   treeshake: true,
   // 压缩代码
